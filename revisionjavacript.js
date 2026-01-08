@@ -80,3 +80,57 @@ let mapVetements = new Map([
 ]);
 
 console.log(mapVetements);
+
+//**j'utilise des getters et setters pour manipuler la map */
+//getter(anglais)signifie acceseurs.il permet d'accrdera la map
+//pour accéder , j'utilise la méthode get'
+console.log("il ya ",mapVetements.get("t-shirt"),"t-shirt");
+console.log("il ya ",mapVetements.get("salouva"),"salouva");
+
+
+//setter (anglais) signifie mogifieur
+//il permet de modifier le couple dans la map ou 
+mapVetements.set("pontalon",150);
+console.log("Mapvetements:",mapVetements);
+
+
+         //**ici j'utilise foreach */
+let text = "";
+mapVetements.forEach (function(value, key) {
+  text += key + ' = ' + value;
+})
+
+console.log("ici j'affiche for each",text);
+
+console.log(mapVetements.has("apples"));
+
+
+        //**let methode has vérifie l'éxistance d'une clé dans la map
+        // attention a la casse. il faut respecter la majuscule et la minuscule */
+let coupleMap = mapVetements.entries();
+console.log("coupleMap",coupleMap);
+for(let couple of coupleMap){
+    console.log(couple)
+}
+
+console.log("deuxiemme boucle for appliqué a la map");
+
+for(let c of mapVetements.entries()){
+    console.log(c);
+}
+
+
+
+
+        //**la methode value() récupère uniquement les valeurs de la map *
+        // /
+let valeurs = mapVetements.values();
+console.log("ici je recupere les valeurs Map",valeurs);
+
+
+
+//*la boucle for()récupère chaque valeur individuellement */
+console.log("deuxieme façon de recuperer les valeurs de la map");
+for(let valeur of mapVetements.values()){
+    console.log(valeur)
+}
